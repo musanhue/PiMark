@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empresas PiMark | Innovación y Servicios Integrales</title>
+    <meta name="description" content="Empresas PiMark: Soluciones integrales en tecnología, ingeniería y gestión comercial.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        pimark: {
+                            black: '#333333', // Gris oscuro corporativo
+                            blue: '#1e4885',  // Azul corporativo
+                            light: '#f5f7fa', // Fondo suave
+                            white: '#ffffff',
+                            hover: '#153666'
+                        }
+                    },
+                    boxShadow: {
+                        'soft': '0 4px 30px rgba(0,0,0,0.05)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            color: #333333;
+        }
+        
+        .glass-nav {
+            background-color: rgba(255, 255, 255, 0.9);
+            backdrop-filter: saturate(180%) blur(20px);
+            -webkit-backdrop-filter: saturate(180%) blur(20px);
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .service-card {
+            transition: all 0.3s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(30, 72, 133, 0.08); /* Sombra azulada sutil */
+            border-color: #1e4885;
+        }
+    </style>
+</head>
+<body class="bg-white">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 glass-nav border-b border-gray-100 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-24">
+                <!-- Logo Nav: Ajustado para la nueva proporción -->
+                <div class="flex-shrink-0 flex items-center cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <img src="Logo Empresas PiMark.png" alt="Empresas PiMark" class="h-16 w-auto object-contain" onerror="this.style.display='none'; document.getElementById('fallback-logo').style.display='block';">
+                    <!-- Texto de respaldo -->
+                    <span id="fallback-logo" class="hidden text-3xl font-bold tracking-tight text-pimark-black">
+                        <span class="text-pimark-blue">Pi</span>Mark
+                    </span>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#inicio" class="text-sm font-medium text-gray-600 hover:text-pimark-blue transition-colors">Inicio</a>
+                    <a href="#servicios" class="text-sm font-medium text-gray-600 hover:text-pimark-blue transition-colors">Soluciones</a>
+                    <a href="#nosotros" class="text-sm font-medium text-gray-600 hover:text-pimark-blue transition-colors">Nosotros</a>
+                    <a href="#contacto" class="bg-pimark-blue text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-pimark-hover transition-colors shadow-lg shadow-blue-900/10">Contacto</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-600 hover:text-pimark-blue focus:outline-none p-2">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full shadow-xl top-24">
+            <div class="px-4 pt-2 pb-6 space-y-2">
+                <a href="#inicio" class="block px-3 py-3 text-base font-medium text-gray-700 hover:text-pimark-blue hover:bg-gray-50 rounded-xl">Inicio</a>
+                <a href="#servicios" class="block px-3 py-3 text-base font-medium text-gray-700 hover:text-pimark-blue hover:bg-gray-50 rounded-xl">Soluciones</a>
+                <a href="#nosotros" class="block px-3 py-3 text-base font-medium text-gray-700 hover:text-pimark-blue hover:bg-gray-50 rounded-xl">Nosotros</a>
+                <a href="#contacto" class="block px-3 py-3 text-base font-medium text-pimark-blue font-semibold bg-blue-50 rounded-xl mt-4">Contacto</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="pt-36 pb-20 lg:pt-52 lg:pb-32 bg-gradient-to-b from-white to-pimark-light/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <!-- Icono Central (PM): Ajustado para destacar con buena proporción -->
+            <div class="flex justify-center mb-10 fade-in-up">
+                <img src="Logo PM.png" alt="Icono PiMark" class="h-40 w-auto opacity-100 object-contain" onerror="this.style.display='none'">
+            </div>
+
+            <h1 class="text-5xl md:text-7xl font-bold tracking-tight text-pimark-black mb-6 fade-in-up delay-100">
+                Excelencia que <br> <span class="text-pimark-blue">impulsa el futuro.</span>
+            </h1>
+            <p class="mt-6 max-w-2xl mx-auto text-xl text-gray-500 font-light fade-in-up delay-200 leading-relaxed">
+                En Empresas PiMark integramos tecnología, gestión y estrategia para llevar su negocio al siguiente nivel de competitividad.
+            </p>
+            <div class="mt-10 flex flex-col sm:flex-row justify-center gap-4 fade-in-up delay-300">
+                <a href="#contacto" class="px-8 py-4 bg-pimark-black text-white text-sm font-semibold rounded-full hover:bg-gray-800 transition-all hover:scale-105 shadow-xl shadow-gray-200">
+                    Iniciar Conversación
+                </a>
+                <a href="#servicios" class="px-8 py-4 bg-white text-pimark-black border border-gray-200 text-sm font-semibold rounded-full hover:border-pimark-blue hover:text-pimark-blue transition-all">
+                    Explorar Servicios
+                </a>
+            </div>
+            
+            <!-- Hero Visual -->
+            <div class="mt-20 fade-in-up delay-300 relative">
+                <div class="absolute inset-0 bg-gradient-to-b from-transparent to-white/80 z-10 bottom-0 h-20"></div>
+                <div class="relative rounded-3xl overflow-hidden shadow-2xl mx-auto max-w-6xl h-64 md:h-[500px] bg-gray-100 group">
+                   <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=2070&q=80" alt="Edificio Corporativo Moderno" class="object-cover w-full h-full opacity-90 group-hover:scale-105 transition-transform duration-1000">
+                   <div class="absolute inset-0 bg-pimark-blue/10 mix-blend-multiply"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="nosotros" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:grid lg:grid-cols-12 lg:gap-16 items-center">
+                <div class="lg:col-span-6 mb-12 lg:mb-0">
+                    <span class="text-pimark-blue font-semibold tracking-wider text-sm uppercase">Sobre Nosotros</span>
+                    <h2 class="text-3xl md:text-5xl font-bold text-pimark-black mt-3 mb-8">Solidez y confianza en cada proyecto.</h2>
+                    <p class="text-lg text-gray-600 mb-6 font-light leading-relaxed">
+                        Empresas PiMark se establece como un pilar de innovación y eficiencia. Nuestra filosofía se centra en la adaptabilidad y el compromiso absoluto con los resultados de nuestros clientes.
+                    </p>
+                    <p class="text-lg text-gray-600 font-light leading-relaxed mb-8">
+                        Combinamos disciplinas técnicas con una visión comercial aguda, permitiendo que cada solución implementada no solo resuelva un problema técnico, sino que genere valor real al negocio.
+                    </p>
+                    
+                    <div class="flex items-center space-x-4 text-pimark-blue font-medium cursor-pointer group">
+                        <span>Conoce a nuestro equipo</span>
+                        <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                    </div>
+                </div>
+                
+                <div class="lg:col-span-6 grid grid-cols-2 gap-6">
+                    <div class="bg-pimark-light p-8 rounded-3xl h-64 flex flex-col justify-end items-start hover:bg-gray-100 transition-colors">
+                        <svg class="w-10 h-10 text-pimark-blue mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <h3 class="text-xl font-bold text-pimark-black">Calidad<br>Garantizada</h3>
+                    </div>
+                    <div class="bg-pimark-black p-8 rounded-3xl h-64 flex flex-col justify-end items-start text-white mt-12 shadow-xl">
+                        <svg class="w-10 h-10 text-white mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                        <h3 class="text-xl font-bold">Innovación<br>Constante</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicios" class="py-24 bg-pimark-light/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20">
+                <span class="text-pimark-blue font-semibold tracking-wider text-sm uppercase">Nuestras Soluciones</span>
+                <h2 class="text-4xl font-bold text-pimark-black mt-3">Ecosistema de Servicios PiMark</h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                
+                <!-- Service 1: Consultoría & Gestión -->
+                <div class="service-card p-8 rounded-3xl bg-white border border-transparent shadow-sm hover:border-pimark-blue/20">
+                    <div class="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center mb-6 text-pimark-blue">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-pimark-black mb-3">Consultoría & Gestión</h3>
+                    <p class="text-gray-600 leading-relaxed mb-6 text-sm">
+                        Optimizamos sus procesos industriales y administrativos. Brindamos alineamiento estratégico y evaluación detallada de proyectos para decisiones seguras.
+                    </p>
+                    <ul class="space-y-3">
+                        <li class="flex items-center text-sm text-gray-500 font-medium">
+                            <svg class="w-4 h-4 text-pimark-blue mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                            Optimización de Procesos
+                        </li>
+                        <li class="flex items-center text-sm text-gray-500 font-medium">
+                            <svg class="w-4 h-4 text-pimark-blue mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                            Alineamiento Estratégico
+                        </li>
+                        <li class="flex items-center text-sm text-gray-500 font-medium">
+                            <svg class="w-4 h-4 text-pimark-blue mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                            Evaluación de Proyectos
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Service 2: Tecnología -->
+                <div class="service-card p-8 rounded-3xl bg-white border border-transparent shadow-sm hover:border-pimark-blue/20 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-pimark-blue/5 to-transparent rounded-bl-full"></div>
+                    <div class="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center mb-6 text-pimark-blue">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-pimark-black mb-3">Tecnología</h3>
+                    <p class="text-gray-600 leading-relaxed mb-6 text-sm">
+                        Desarrollo de software a medida y sitios web de alto impacto. Proveemos infraestructura segura y soporte continuo para su operación.
+                    </p>
+                    <ul class="space-y-3">
+                        <li class="flex items-center text-sm text-gray-500 font-medium">
+                            <svg class="w-4 h-4 text-pimark-blue mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                            Desarrollo Web & Software
+                        </li>
+                        <li class="flex items-center text-sm text-gray-500 font-medium">
+                            <svg class="w-4 h-4 text-pimark-blue mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                            Hosting & Soporte IT
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Service 3: Comercio & Marketing -->
+                <div class="service-card p-8 rounded-3xl bg-white border border-transparent shadow-sm hover:border-pimark-blue/20">
+                    <div class="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center mb-6 text-pimark-blue">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-pimark-black mb-3">Comercio & Marketing</h3>
+                    <p class="text-gray-600 leading-relaxed mb-6 text-sm">
+                        Estrategias de marketing digital efectivas para potenciar su marca. Comercialización y distribución ágil de productos innovadores.
+                    </p>
+                    <ul class="space-y-3">
+                        <li class="flex items-center text-sm text-gray-500 font-medium">
+                            <svg class="w-4 h-4 text-pimark-blue mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                            Productos Innovadores
+                        </li>
+                        <li class="flex items-center text-sm text-gray-500 font-medium">
+                            <svg class="w-4 h-4 text-pimark-blue mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                            Marketing Digital
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+            
+            <!-- Capacitación removed -->
+            
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contacto" class="py-24 bg-white relative">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-pimark-black">Empecemos a trabajar</h2>
+                <p class="mt-4 text-gray-500">¿Tiene un proyecto en mente? Escríbanos.</p>
+            </div>
+
+            <div class="bg-white p-8 md:p-12 rounded-[2rem] shadow-2xl shadow-gray-200 border border-gray-100">
+                <form class="space-y-8" onsubmit="event.preventDefault(); alert('Gracias por contactar a Empresas PiMark.');">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="space-y-2">
+                            <label class="text-xs font-bold uppercase tracking-wide text-gray-500">Nombre</label>
+                            <input type="text" class="w-full px-4 py-4 rounded-xl bg-gray-50 border-0 focus:ring-2 focus:ring-pimark-blue transition-all" placeholder="Su nombre completo">
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-xs font-bold uppercase tracking-wide text-gray-500">Correo Electrónico</label>
+                            <input type="email" class="w-full px-4 py-4 rounded-xl bg-gray-50 border-0 focus:ring-2 focus:ring-pimark-blue transition-all" placeholder="nombre@empresa.com">
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-2">
+                        <label class="text-xs font-bold uppercase tracking-wide text-gray-500">Mensaje</label>
+                        <textarea rows="4" class="w-full px-4 py-4 rounded-xl bg-gray-50 border-0 focus:ring-2 focus:ring-pimark-blue transition-all" placeholder="Detalles de su proyecto..."></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full py-5 bg-pimark-blue text-white font-bold rounded-xl hover:bg-pimark-hover transition-all shadow-lg shadow-blue-900/20 text-lg">
+                        Enviar Solicitud
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-50 border-t border-gray-200 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-8">
+                <div class="mb-8 md:mb-0 flex flex-col items-center md:items-start">
+                    <!-- Logo Footer: Mantiene la consistencia visual -->
+                    <img src="Logo Empresas PiMark.png" alt="Empresas PiMark" class="h-12 mb-4 opacity-80 object-contain" onerror="this.style.display='none'">
+                    <!-- Nombre de texto eliminado como solicitado -->
+                    <p class="text-sm text-gray-500 mt-2 max-w-xs text-center md:text-left">Soluciones integrales para el mundo moderno.</p>
+                </div>
+                <div class="flex space-x-8">
+                    <a href="#" class="text-gray-400 hover:text-pimark-blue transition-colors">LinkedIn</a>
+                    <a href="#" class="text-gray-400 hover:text-pimark-blue transition-colors">Instagram</a>
+                    <a href="#" class="text-gray-400 hover:text-pimark-blue transition-colors">Twitter</a>
+                </div>
+            </div>
+            <div class="border-t border-gray-200 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-400">
+                <p>&copy; 2026 Empresas PiMark SpA. Todos los derechos reservados.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-gray-600">Política de Privacidad</a>
+                    <a href="#" class="hover:text-gray-600">Términos de Servicio</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Script -->
+    <script>
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+        
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>

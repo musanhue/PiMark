@@ -243,7 +243,7 @@
                         </li>
                         <li class="flex items-center text-sm text-gray-500 font-medium">
                             <svg class="w-4 h-4 text-pimark-blue mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-                            Hosting & Soporte IT
+                            Soporte IT
                         </li>
                     </ul>
                 </div>
@@ -271,8 +271,6 @@
 
             </div>
             
-            <!-- Capacitación removed -->
-            
         </div>
     </section>
 
@@ -285,24 +283,30 @@
             </div>
 
             <div class="bg-white p-8 md:p-12 rounded-[2rem] shadow-2xl shadow-gray-200 border border-gray-100">
-                <form class="space-y-8" onsubmit="event.preventDefault(); alert('Gracias por contactar a Empresas PiMark.');">
+                <!-- Formulario -->
+                <form class="space-y-8" id="contactForm" onsubmit="enviarCorreo(event)">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                         <div class="space-y-2">
                             <label class="text-xs font-bold uppercase tracking-wide text-gray-500">Nombre</label>
-                            <input type="text" class="w-full px-4 py-4 rounded-xl bg-gray-50 border-0 focus:ring-2 focus:ring-pimark-blue transition-all" placeholder="Su nombre completo">
+                            <!-- name="nombre" debe coincidir con el script de Google -->
+                            <input type="text" id="nombre" name="nombre" class="w-full px-4 py-4 rounded-xl bg-gray-50 border-0 focus:ring-2 focus:ring-pimark-blue transition-all" placeholder="Su nombre completo" required>
                         </div>
                         <div class="space-y-2">
                             <label class="text-xs font-bold uppercase tracking-wide text-gray-500">Correo Electrónico</label>
-                            <input type="email" class="w-full px-4 py-4 rounded-xl bg-gray-50 border-0 focus:ring-2 focus:ring-pimark-blue transition-all" placeholder="nombre@empresa.com">
+                            <!-- name="email" debe coincidir con el script de Google -->
+                            <input type="email" id="email" name="email" class="w-full px-4 py-4 rounded-xl bg-gray-50 border-0 focus:ring-2 focus:ring-pimark-blue transition-all" placeholder="nombre@empresa.com" required>
                         </div>
                     </div>
                     
                     <div class="space-y-2">
                         <label class="text-xs font-bold uppercase tracking-wide text-gray-500">Mensaje</label>
-                        <textarea rows="4" class="w-full px-4 py-4 rounded-xl bg-gray-50 border-0 focus:ring-2 focus:ring-pimark-blue transition-all" placeholder="Detalles de su proyecto..."></textarea>
+                        <!-- name="mensaje" debe coincidir con el script de Google -->
+                        <textarea rows="4" id="mensaje" name="mensaje" class="w-full px-4 py-4 rounded-xl bg-gray-50 border-0 focus:ring-2 focus:ring-pimark-blue transition-all" placeholder="Detalles de su proyecto..." required></textarea>
                     </div>
 
-                    <button type="submit" class="w-full py-5 bg-pimark-blue text-white font-bold rounded-xl hover:bg-pimark-hover transition-all shadow-lg shadow-blue-900/20 text-lg">
+                    <div id="statusMessage" class="hidden p-4 rounded-xl text-center text-sm font-semibold"></div>
+
+                    <button type="submit" id="submitBtn" class="w-full py-5 bg-pimark-blue text-white font-bold rounded-xl hover:bg-pimark-hover transition-all shadow-lg shadow-blue-900/20 text-lg">
                         Enviar Solicitud
                     </button>
                 </form>
@@ -322,7 +326,6 @@
                 </div>
                 <div class="flex space-x-8">
                     <a href="#" class="text-gray-400 hover:text-pimark-blue transition-colors">LinkedIn</a>
-                    <a href="#" class="text-gray-400 hover:text-pimark-blue transition-colors">Instagram</a>
                     <a href="#" class="text-gray-400 hover:text-pimark-blue transition-colors">Twitter</a>
                 </div>
             </div>
@@ -336,8 +339,9 @@
         </div>
     </footer>
 
-    <!-- Mobile Menu Script -->
+    <!-- Scripts -->
     <script>
+        // Menu Móvil
         const btn = document.getElementById('mobile-menu-btn');
         const menu = document.getElementById('mobile-menu');
 
@@ -350,6 +354,56 @@
                 menu.classList.add('hidden');
             });
         });
+
+        // -------------------------------------------------------------
+        // CONFIGURACIÓN DE GOOGLE APPS SCRIPT
+        // -------------------------------------------------------------
+        // Paso 1: Crea el script siguiendo la guía adjunta.
+        // Paso 2: Reemplaza la URL de abajo con la que te dé Google.
+        const googleScriptUrl = "https://script.google.com/macros/s/AKfycbyR_2wMMzBUW76RoffiAShtNLfBkpwOArBgKtDGe0TCi2JKtVXbARoe9y_cuSz79IvMcg/exec"; 
+
+        async function enviarCorreo(event) {
+            event.preventDefault(); 
+            
+            const form = event.target;
+            const btn = document.getElementById('submitBtn');
+            const status = document.getElementById('statusMessage');
+
+            // Validar que se haya puesto la URL real
+            if(googleScriptUrl.includes("TU_URL")) {
+                alert("⚠️ Falta configurar la URL de Google Script en el código.");
+                return;
+            }
+
+            // UI: Cargando
+            btn.disabled = true;
+            btn.innerHTML = `<svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white inline-block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg> Enviando...`;
+
+            try {
+                // Enviamos los datos usando fetch
+                // 'no-cors' es necesario para scripts de Google desde dominios externos simple
+                await fetch(googleScriptUrl, {
+                    method: 'POST',
+                    body: new FormData(form),
+                    mode: 'no-cors' 
+                });
+
+                // Éxito (Asumimos éxito si no hay error de red en modo no-cors)
+                status.classList.remove('hidden', 'text-red-600', 'bg-red-50');
+                status.classList.add('text-green-600', 'bg-green-50');
+                status.textContent = "¡Gracias! Hemos recibido tu mensaje correctamente.";
+                form.reset();
+            } catch (error) {
+                console.error('Error!', error.message);
+                status.classList.remove('hidden', 'text-green-600', 'bg-green-50');
+                status.classList.add('text-red-600', 'bg-red-50');
+                status.textContent = "Hubo un error al enviar. Por favor intenta nuevamente o escríbenos directamente.";
+            } finally {
+                btn.disabled = false;
+                btn.textContent = "Enviar Solicitud";
+                status.classList.remove('hidden');
+            }
+        }
     </script>
 </body>
 </html>

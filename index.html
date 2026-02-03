@@ -123,75 +123,76 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="inicio" class="pt-36 pb-20 lg:pt-52 lg:pb-32 bg-gradient-to-b from-white to-pimark-light/30">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <!-- Icono Central (PM): Ajustado para destacar con buena proporción -->
-            <div class="flex justify-center mb-10 fade-in-up">
-                <img src="Logo PM.png" alt="Icono PiMark" class="h-40 w-auto opacity-100 object-contain" onerror="this.style.display='none'">
-            </div>
-
-            <h1 class="text-5xl md:text-7xl font-bold tracking-tight text-pimark-black mb-6 fade-in-up delay-100">
-                Excelencia que <br> <span class="text-pimark-blue">impulsa el futuro.</span>
-            </h1>
-            <p class="mt-6 max-w-2xl mx-auto text-xl text-gray-500 font-light fade-in-up delay-200 leading-relaxed">
-                En Empresas PiMark integramos tecnología, gestión y estrategia para llevar su negocio al siguiente nivel de competitividad.
-            </p>
-            <div class="mt-10 flex flex-col sm:flex-row justify-center gap-4 fade-in-up delay-300">
-                <a href="#contacto" class="px-8 py-4 bg-pimark-black text-white text-sm font-semibold rounded-full hover:bg-gray-800 transition-all hover:scale-105 shadow-xl shadow-gray-200">
-                    Iniciar Conversación
-                </a>
-                <a href="#servicios" class="px-8 py-4 bg-white text-pimark-black border border-gray-200 text-sm font-semibold rounded-full hover:border-pimark-blue hover:text-pimark-blue transition-all">
-                    Explorar Servicios
-                </a>
-            </div>
-            
-            <!-- Hero Visual -->
-            <div class="mt-20 fade-in-up delay-300 relative">
-                <div class="absolute inset-0 bg-gradient-to-b from-transparent to-white/80 z-10 bottom-0 h-20"></div>
-                <div class="relative rounded-3xl overflow-hidden shadow-2xl mx-auto max-w-6xl h-64 md:h-[500px] bg-gray-100 group">
-                   <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=2070&q=80" alt="Edificio Corporativo Moderno" class="object-cover w-full h-full opacity-90 group-hover:scale-105 transition-transform duration-1000">
-                   <div class="absolute inset-0 bg-pimark-blue/10 mix-blend-multiply"></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="nosotros" class="py-24 bg-white">
+    <!-- Hero Section (Rediseñado: Layout Dividido) -->
+    <section id="inicio" class="pt-32 pb-16 lg:pt-48 lg:pb-32 bg-white overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="lg:grid lg:grid-cols-12 lg:gap-16 items-center">
-                <div class="lg:col-span-6 mb-12 lg:mb-0">
-                    <span class="text-pimark-blue font-semibold tracking-wider text-sm uppercase">Sobre Nosotros</span>
-                    <h2 class="text-3xl md:text-5xl font-bold text-pimark-black mt-3 mb-8">Solidez y confianza en cada proyecto.</h2>
-                    <p class="text-lg text-gray-600 mb-6 font-light leading-relaxed">
-                        Empresas PiMark se establece como un pilar de innovación y eficiencia. Nuestra filosofía se centra en la adaptabilidad y el compromiso absoluto con los resultados de nuestros clientes.
-                    </p>
-                    <p class="text-lg text-gray-600 font-light leading-relaxed mb-8">
-                        Combinamos disciplinas técnicas con una visión comercial aguda, permitiendo que cada solución implementada no solo resuelva un problema técnico, sino que genere valor real al negocio.
+                
+                <!-- Columna Izquierda: Texto -->
+                <div class="lg:col-span-6 text-center lg:text-left flex flex-col items-center lg:items-start z-10">
+                    <!-- Icono PM (Un poco más pequeño para equilibrar) -->
+                    <div class="mb-8 fade-in-up">
+                        <img src="Logo PM.png" alt="Icono PiMark" class="h-28 w-auto opacity-100 object-contain" onerror="this.style.display='none'">
+                    </div>
+
+                    <h1 class="text-5xl md:text-6xl font-bold tracking-tight text-pimark-black mb-6 fade-in-up delay-100 leading-tight">
+                        Excelencia que <br> <span class="text-pimark-blue">impulsa el futuro.</span>
+                    </h1>
+                    
+                    <p class="mt-4 text-xl text-gray-500 font-light fade-in-up delay-200 leading-relaxed max-w-lg mx-auto lg:mx-0">
+                        En Empresas PiMark integramos tecnología, gestión y estrategia para llevar su negocio al siguiente nivel de competitividad.
                     </p>
                     
-                    <div class="flex items-center space-x-4 text-pimark-blue font-medium cursor-pointer group">
-                        <span>Conoce a nuestro equipo</span>
-                        <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                    <div class="mt-10 flex flex-col sm:flex-row gap-4 w-full sm:w-auto fade-in-up delay-300">
+                        <a href="#contacto" class="px-8 py-4 bg-pimark-black text-white text-sm font-semibold rounded-full hover:bg-gray-800 transition-all hover:scale-105 shadow-xl shadow-gray-200 text-center">
+                            Iniciar Conversación
+                        </a>
+                        <a href="#servicios" class="px-8 py-4 bg-white text-pimark-black border border-gray-200 text-sm font-semibold rounded-full hover:border-pimark-blue hover:text-pimark-blue transition-all text-center">
+                            Explorar Servicios
+                        </a>
                     </div>
                 </div>
                 
-                <div class="lg:col-span-6 grid grid-cols-2 gap-6">
-                    <div class="bg-pimark-light p-8 rounded-3xl h-64 flex flex-col justify-end items-start hover:bg-gray-100 transition-colors">
-                        <svg class="w-10 h-10 text-pimark-blue mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        <h3 class="text-xl font-bold text-pimark-black">Calidad<br>Garantizada</h3>
+                <!-- Columna Derecha: Imagen con Información Superpuesta -->
+                <div class="lg:col-span-6 mt-16 lg:mt-0 relative fade-in-up delay-200">
+                    <!-- Contenedor Imagen -->
+                    <div class="relative rounded-3xl overflow-hidden shadow-2xl bg-gray-100 aspect-[4/3] lg:aspect-square group">
+                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=2070&q=80" alt="Edificio Corporativo Moderno" class="object-cover w-full h-full opacity-95 group-hover:scale-105 transition-transform duration-1000">
+                        <div class="absolute inset-0 bg-gradient-to-t from-pimark-blue/40 to-transparent mix-blend-multiply"></div>
+                        
+                        <!-- Tarjeta de Información Flotante (Enlace interactivo a servicios) -->
+                        <a href="#servicios" class="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur-md p-6 rounded-2xl shadow-lg border border-white/50 animate-fade-in-up delay-300 cursor-pointer hover:shadow-xl transition-all duration-300 group-hover:scale-[1.02] block">
+                            <div class="flex items-center gap-4">
+                                <div class="bg-pimark-blue/10 p-3 rounded-full text-pimark-blue shrink-0">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-pimark-black text-lg">Soluciones 360°</p>
+                                    <div class="flex items-center text-xs text-gray-500 mt-1 space-x-2">
+                                        <span>Ingeniería</span>
+                                        <span class="w-1 h-1 bg-gray-300 rounded-full"></span>
+                                        <span>Tecnología</span>
+                                        <span class="w-1 h-1 bg-gray-300 rounded-full"></span>
+                                        <span>Marketing</span>
+                                    </div>
+                                </div>
+                                <!-- Flecha indicadora -->
+                                <div class="ml-auto text-pimark-blue/50">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                    <div class="bg-pimark-black p-8 rounded-3xl h-64 flex flex-col justify-end items-start text-white mt-12 shadow-xl">
-                        <svg class="w-10 h-10 text-white mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-                        <h3 class="text-xl font-bold">Innovación<br>Constante</h3>
-                    </div>
+                    
+                    <!-- Decoración de fondo -->
+                    <div class="absolute -z-10 top-10 -right-10 w-72 h-72 bg-pimark-blue/5 rounded-full blur-3xl"></div>
                 </div>
+
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
+    <!-- Services Section (Movido arriba según solicitud) -->
     <section id="servicios" class="py-24 bg-pimark-light/50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-20">
@@ -271,6 +272,40 @@
 
             </div>
             
+        </div>
+    </section>
+
+    <!-- About Section (Movido abajo) -->
+    <section id="nosotros" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:grid lg:grid-cols-12 lg:gap-16 items-center">
+                <div class="lg:col-span-6 mb-12 lg:mb-0">
+                    <span class="text-pimark-blue font-semibold tracking-wider text-sm uppercase">Sobre Nosotros</span>
+                    <h2 class="text-3xl md:text-5xl font-bold text-pimark-black mt-3 mb-8">Solidez y confianza en cada proyecto.</h2>
+                    <p class="text-lg text-gray-600 mb-6 font-light leading-relaxed">
+                        Empresas PiMark se establece como un pilar de innovación y eficiencia. Nuestra filosofía se centra en la adaptabilidad y el compromiso absoluto con los resultados de nuestros clientes.
+                    </p>
+                    <p class="text-lg text-gray-600 font-light leading-relaxed mb-8">
+                        Combinamos disciplinas técnicas con una visión comercial aguda, permitiendo que cada solución implementada no solo resuelva un problema técnico, sino que genere valor real al negocio.
+                    </p>
+                    
+                    <div class="flex items-center space-x-4 text-pimark-blue font-medium cursor-pointer group">
+                        <span>Conoce a nuestro equipo</span>
+                        <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                    </div>
+                </div>
+                
+                <div class="lg:col-span-6 grid grid-cols-2 gap-6">
+                    <div class="bg-pimark-light p-8 rounded-3xl h-64 flex flex-col justify-end items-start hover:bg-gray-100 transition-colors">
+                        <svg class="w-10 h-10 text-pimark-blue mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <h3 class="text-xl font-bold text-pimark-black">Calidad<br>Garantizada</h3>
+                    </div>
+                    <div class="bg-pimark-black p-8 rounded-3xl h-64 flex flex-col justify-end items-start text-white mt-12 shadow-xl">
+                        <svg class="w-10 h-10 text-white mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                        <h3 class="text-xl font-bold">Innovación<br>Constante</h3>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
